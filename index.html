@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html style="min-height: 100vh;">
+<head>
+    <meta charset='utf-8'>
+    <title>Wolfoo Crazy</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="../assets/style/custom.scrollbar.css">
+    <style>
+        body {
+            font: 18px Segoe UI, Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            margin: 0;
+        }
+        li::after {
+            content: '.';
+        }
+        #image-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100vw;
+        }
+        #image-container div {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-width: 200px;
+            min-height: 200px;
+        }
+        #image-container img {
+            height: 100%;
+        }
+        #license {
+            box-sizing: border-box;
+            position: fixed;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            bottom: 0;
+            font-size: 12px;
+            color: #fff;
+            padding: 0 6px;
+            margin: 8px;
+            border-radius: 10px;
+            background: #000;
+        }
+        #license img {
+            margin-top: 4px;
+            margin-right: 10px;
+        }
+        @media only screen and (max-width: 664px) {
+            #license {
+                display: block;
+                text-align: center;
+            }
+            #license img {
+                display: block;
+                margin: auto;
+            }
+        }
+        .code {
+            font-family: 'Courier New', Courier, monospace;
+            line-break: anywhere;
+            margin: 15px;
+            padding: 5px;
+            background: #80808019;
+        }
+        .show-link::before {
+            content: attr(href);
+        }
+    </style>
+</head>
+<body>
+    <p style="font-size: 2em;">Wolfoo and his friends are ruining the web!</p>
+    <strong>Wolfoo characters taken from <a class="show-link" href="https://scratch.mit.edu/projects/563550882/"></a></strong>
+    <h1>Characters modified</h1>
+    <ul>
+        <li>Wolfoo, Pando: Modified eyes when blinking</li>
+        <li>Pando: Changed apple</li>
+        <li>Kat, Piggy: Centered them</li>
+        <li>Piggy: Mirrored to face to right</li>
+        <li>Bufo, Piggy: Added tail because were missing</li>
+        <li>Jenny: Modified body size to look more real</li>
+    </ul>
+    <p>You can use this on another website with this script</p>
+    <p class="code">
+        fetch('https://rockingerser.github.io/wolfoo-crazy/index.js').then(t=>t.text()).then(j=>Function(j)());
+    </p>
+    <p>Wolfoo characters move around the page, they grab content from the page, and drop it anywhere. They can generate scrollbars, so they can abuse of that to step outside and go too far. They keep running and ruining the website.</p>
+    <div id="image-container">
+        <div>
+            <img src="characters/svg/Wolfoo0.svg" alt="Wolfoo">
+        </div>
+        <div>
+            <img src="characters/svg/Lucy0.svg" alt="Lucy">
+        </div>
+    </div>
+    <h2>How to do something?</h2>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea sequi dicta, nulla saepe veritatis velit maiores atque odio ex voluptatum nisi quae facilis fugiat facere quam accusantium. Nostrum, iste ad?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A eaque adipisci officiis ducimus iusto, eveniet deserunt, voluptate magni error porro optio? Reprehenderit aspernatur velit nesciunt magnam aut possimus veritatis culpa.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae dolorem nam fugit alias impedit, distinctio quod nihil quibusdam, laboriosam sunt, corporis amet repellat nisi maxime id explicabo reiciendis optio animi?</p>
+    <h3>How to walk?</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi exercitationem necessitatibus ea repellat reiciendis placeat sint nemo id sit, eum harum voluptatibus veritatis aspernatur enim consequatur modi? Laborum, ipsum nulla.</p>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum amet sequi voluptatum doloribus nihil tempore maiores similique laboriosam perspiciatis iusto, asperiores ducimus aperiam, provident blanditiis iste eligendi pariatur omnis! Incidunt?</p>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit laboriosam ad possimus hic voluptas quam ratione! Est quisquam dignissimos labore provident autem, enim mollitia, esse nemo et aspernatur suscipit molestias.</p>
+    <script src='index.js'></script>
+    <script src='wolfoo.hue-rotate.js'></script>
+</body>
+</html>

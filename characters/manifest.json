@@ -1,0 +1,56 @@
+{
+    "available": [
+        "Jenny",
+        "Wolfoo",
+        "Lucy",
+        "Pando",
+        "Kat",
+        "Piggy",
+        "Bufo"
+    ],
+    "Jenny": [
+        "characters/svg/Jenny0.svg",
+        "characters/svg/Jenny1.svg",
+        "characters/svg/Jenny2.svg",
+        "characters/svg/Jenny3.svg",
+        "characters/svg/Jenny4.svg"
+    ],
+    "Wolfoo": [
+        "characters/svg/Wolfoo0.svg",
+        "characters/svg/Wolfoo1.svg",
+        "characters/svg/Wolfoo2.svg",
+        "characters/svg/Wolfoo3.svg",
+        "characters/svg/Wolfoo4.svg"
+    ],
+    "Lucy": [
+        "characters/svg/Lucy0.svg",
+        "characters/svg/Lucy1.svg"
+    ],
+    "Pando": [
+        "characters/svg/Pando0.svg",
+        "characters/svg/Pando1.svg",
+        "characters/svg/Pando2.svg",
+        "characters/svg/Pando3.svg",
+        "characters/svg/Pando4.svg",
+        "characters/svg/Pando5.svg"
+    ],
+    "Kat": [
+        "characters/svg/Kat0.svg",
+        "characters/svg/Kat1.svg",
+        "characters/svg/Kat2.svg",
+        "characters/svg/Kat3.svg",
+        "characters/svg/Kat4.svg"
+    ],
+    "Piggy": [
+        "characters/svg/Piggy0.svg",
+        "characters/svg/Piggy1.svg",
+        "characters/svg/Piggy2.svg",
+        "characters/svg/Piggy3.svg"
+    ],
+    "Bufo": [
+        "characters/svg/Bufo0.svg",
+        "characters/svg/Bufo1.svg",
+        "characters/svg/Bufo2.svg",
+        "characters/svg/Bufo3.svg"
+    ]
+}

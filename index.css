@@ -1,0 +1,22 @@
+:root {
+    --glide-transition: 600ms;
+    --matrix-transition: 0.1s;
+}
+.wolfoo-character-container {
+    position: absolute;
+    z-index: 9999;
+    display: -ms-grid;
+    display: grid;
+    font: 16px Arial, Helvetica, sans-serif;
+    text-align: center;
+    pointer-events: none;
+}
+.wolfoo-character-container, .grabbed {
+    -webkit-transition: left var(--glide-transition) linear, top var(--glide-transition) linear, transform var(--matrix-transition) linear;
+    -moz-transition: left var(--glide-transition) linear, top var(--glide-transition) linear, transform var(--matrix-transition) linear;
+    -o-transition: left var(--glide-transition) linear, top var(--glide-transition) linear, transform var(--matrix-transition) linear;
+    transition: left var(--glide-transition) linear, top var(--glide-transition) linear, transform var(--matrix-transition) linear;
+}
+.wolfoo-character-container img {
+    width: 70px;
+}
