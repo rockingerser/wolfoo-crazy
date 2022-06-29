@@ -74,7 +74,7 @@ void function() {
             div.classList = 'wolfoo-character-container non-grabbable';
             div.title = character;
             div.innerHTML = `<img src="${random(chars[character])}" class="non-grabbable"><span class="non-grabbable">${character}</span>`;
-            div.pig = new Audio(root + 'characters/sounds/pig.wav');
+            div.pig = new Audio(root +'characters/sounds/pig.wav');
             div.x = Math.random() * document.documentElement.scrollWidth;
             div.y = Math.random() * document.documentElement.scrollHeight;
             document.body.appendChild(div);
@@ -101,6 +101,10 @@ void function() {
             for (var me of document.body.querySelectorAll('.wolfoo-character-container')) {
                 var grabbable = document.body.querySelectorAll('*');
                 for (var el of grabbable) {
+                    if (!el.className.includes)
+                        el.className.includes = function() {
+                            return false;
+                        };
                     if (el.className.includes('non-grabbable') || el.children.length >= 5)
                         continue;
                     if (el.grabbedBy) {
