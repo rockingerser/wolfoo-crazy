@@ -23,7 +23,7 @@ void function() {
     } catch (e) {
         settings = {
             'render-speed': 1000 / 60,
-            '-agent-speed': 1,
+            '-agent-speed': 2,
             '-agent-rotate-speed': 25,
             '-agent-drag-background-color': 'rgba(0, 255, 0, 0.2)',
             '-agent-drag-outline-color': 'rgba(0, 255, 0, 0.4)',
@@ -96,7 +96,7 @@ void function() {
             var div = document.createElement('div');
             div.classList = 'wolfoo-character-container non-grabbable';
             div.title = character;
-            div.innerHTML = `<img src="${random(chars[character])}" class="non-grabbable"><span class="non-grabbable">${character}</span>`;
+            div.innerHTML = `<img src="${root + 'characters/svg/' + random(chars[character])}" class="non-grabbable"><span class="non-grabbable">${character}</span>`;
             div.pig = new Audio(root +'characters/sounds/pig.wav');
             div.x = Math.random() * document.documentElement.scrollWidth;
             div.y = Math.random() * document.documentElement.scrollHeight;
@@ -106,8 +106,9 @@ void function() {
         }
         spawnChar();
 
-        // Glide characters
-        function glideAll() {
+        // render characters
+        var frameRate;
+        function renderAll() {
             var rotSpeed = settings['-agent-rotate-speed'] * (settings['render-speed'] / (1000 / 60)),
                 moveSpeed = settings['-agent-speed'] * 4 * (settings['render-speed'] / (1000 / 60));
             for (var me of document.querySelectorAll('.wolfoo-character-container')) {
@@ -115,42 +116,36 @@ void function() {
                 me.myDir = me.myDir % 360;
                 var lastValue = me.x;
                 me.x += Math.cos(rad(me.myDir)) * moveSpeed;
-                if (me.x > document.documentElement.scrollWidth || me.x < 0)
+                if (me.x > document.documentElement.scrollWidth || me.x < 0) {
                     me.x = lastValue;
+                    me.myDir = 180 - me.myDir;
+                }
                 lastValue = me.y;
                 me.y += Math.sin(rad(me.myDir)) * moveSpeed;
-                if (me.y > document.documentElement.scrollHeight || me.y < 0)
+                if (me.y > document.documentElement.scrollHeight || me.y < 0) {
                     me.y = lastValue;
+                    me.myDir *= -1;
+                }
                 me.style.left = me.x - (me.offsetWidth / 2) + 'px';
                 me.style.top = me.y - (me.offsetHeight / 2) + 'px';
                 me.querySelector('img').style.transform = `rotateY(${(me.myDir < 270 && me.myDir >= 90) ? 180 : 0}deg)`;
-            }
-            setTimeout(()=>requestAnimationFrame(glideAll), settings['render-speed']);
-        }
-        glideAll();
-
-        // Set behavior of the characters
-        function renderAll() {
-            for (var me of document.body.querySelectorAll('.wolfoo-character-container')) {
                 var grabbable = document.body.querySelectorAll('*');
                 for (var el of grabbable) {
                     if (!el.className.includes)
-                        el.className.includes = function() {
-                            return false;
-                        };
+                        el.className.includes = ()=>false;
                     if (el.className.includes('non-grabbable') || el.children.length >= 5)
                         continue;
                     if (el.grabbedBy) {
                         el.style.position = 'absolute';
                         el.style.left = Number(el.grabbedBy.style.left.substring(0, el.grabbedBy.style.left.length - 2)) - el.relX + 'px';
                         el.style.top = Number(el.grabbedBy.style.top.substring(0, el.grabbedBy.style.top.length - 2)) - el.relY + 'px';
-                        if (Math.random() < 0.01 * (settings['render-speed'] / (1000 / 60))) {
+                        if (Math.random() < 0.001 * (settings['render-speed'] / (1000 / 60))) {
                             el.grabbedBy = null;
                             el.classList.remove('grabbed');
                         }
                         continue;
                     }
-                    if (!el.className.includes('grabbed') && Math.random() < 0.01 * (settings['render-speed'] / (1000 / 60)) && collideHTML(el, me)) {
+                    if (!el.className.includes('grabbed') && Math.random() < 0.002 * (settings['render-speed'] / (1000 / 60)) && collideHTML(el, me)) {
                         el.classList += ((el.className.length) ? ' ' : '') + 'grabbed';
                         el.grabbedBy = me;
                         el.position = el.style.position || 'static';
@@ -162,6 +157,7 @@ void function() {
                     me.pig.play();
             }
             setTimeout(()=>requestAnimationFrame(renderAll), settings['render-speed']);
+            frameRate = performance.now();
         }
         renderAll();
     }

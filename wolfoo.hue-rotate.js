@@ -1,5 +1,6 @@
 void function() {
-    document.getElementById('image-container').animate([
+    var container = document.getElementById('image-container');
+    container.animate([
         {
             filter: 'hue-rotate(360deg)'
         }

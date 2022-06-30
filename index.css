@@ -58,6 +58,7 @@
     font: 16px Arial, Helvetica, sans-serif;
     text-align: center;
     pointer-events: none;
+    image-rendering: pixelated;
 }
 .wolfoo-character-container, .grabbed {
     -webkit-transition: left var(--glide-transition) linear, top var(--glide-transition) linear;
