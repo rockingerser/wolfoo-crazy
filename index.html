@@ -30,43 +30,13 @@
         #image-container img {
             height: 100%;
         }
-        #license {
-            box-sizing: border-box;
-            position: fixed;
-            width: 100vw;
-            display: flex;
-            align-items: center;
-            bottom: 0;
-            font-size: 12px;
-            color: #fff;
-            padding: 0 6px;
-            margin: 8px;
-            border-radius: 10px;
-            background: #000;
-        }
-        #license img {
-            margin-top: 4px;
-            margin-right: 10px;
-        }
-        @media only screen and (max-width: 664px) {
-            #license {
-                display: block;
-                text-align: center;
-            }
-            #license img {
-                display: block;
-                margin: auto;
-            }
-        }
         .code {
             font-family: 'Courier New', Courier, monospace;
             line-break: anywhere;
             margin: 15px;
             padding: 5px;
             background: #80808019;
-        }
-        .show-link::before {
-            content: attr(href);
+            overflow-x: scroll;
         }
     </style>
 </head>
@@ -83,9 +53,20 @@
         <li>Jenny: Modified body size to look more real</li>
     </ul>
     <p>You can use this on another website with this script</p>
-    <p class="code">
-        fetch('https://rockingerser.github.io/wolfoo-crazy/index.js').then(t=>t.text()).then(j=>Function(j)());
-    </p>
+    <pre id="import" class="code">
+/* You can remove this if you won't change these values below, from here... */
+/* agent: wolfoo character */
+/* render-speed: sets the render speed of the agents. (Changes frame rate and uses Delta time, the agents and elements positions are interpolated to look smoother): Example: 1000 / 30 will set rendering speed to 30 frames, 100 / 20 to 20 frames */
+/* -agent-speed: speed of the agents */
+/* -agent-rotate-speed: rotation speed of the agents */
+/* -agent-drag-background-color: sets the background color of an element when is dragged by an agent */
+/* -agent-drag-outline-color: sets the outline color of an element when is dragged by an agent */
+/* -agent-drag-outline-width: sets the outline width of an element when is dragged by an agent */
+/* -agent-drag-outline-style: sets the outline style of an element when is dragged by an agent */
+/* @wolfoo-crazy-default */
+/* To here */
+fetch('https://rockingerser.github.io/wolfoo-crazy/index.js').then(t=>t.text()).then(j=>Function(j)());
+    </pre>
     <p>Wolfoo characters move around the page, they grab content from the page, and drop it anywhere. They can generate scrollbars, so they can abuse of that to step outside and go too far. They keep running and ruining the website.</p>
     <div id="image-container">
         <div>
