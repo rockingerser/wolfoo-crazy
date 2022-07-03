@@ -1,4 +1,5 @@
 {
+    "agent-html": "<img class='wolfoo-character non-grabbable'><span class='wolfoo-character-name non-grabbable'></span>",
     "available": [
         "Jenny",
         "Wolfoo",
