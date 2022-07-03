@@ -1,47 +1,16 @@
 <!DOCTYPE html>
-<html style="min-height: 100vh;">
+<html lang="en">
 <head>
     <meta charset='utf-8'>
     <title>Wolfoo Crazy</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel="stylesheet" href="../assets/style/custom.scrollbar.css">
-    <style>
-        body {
-            font: 18px Segoe UI, Arial, Helvetica, sans-serif;
-            line-height: 1.5;
-            margin: 0;
-        }
-        li::after {
-            content: '.';
-        }
-        #image-container {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100vw;
-        }
-        #image-container div {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-width: 200px;
-            min-height: 200px;
-        }
-        #image-container img {
-            height: 100%;
-        }
-        .code {
-            font-family: 'Courier New', Courier, monospace;
-            line-break: anywhere;
-            margin: 15px;
-            padding: 5px;
-            background: #80808019;
-            overflow-x: scroll;
-        }
-    </style>
+    <link rel="stylesheet" href="style/index.css">
+    <link rel="stylesheet" href="style/wolfoo.crazy.css">
 </head>
 <body>
-    <p style="font-size: 2em;">Wolfoo and his friends are ruining the web!</p>
+    <noscript id="request-enable-js" class="wolfoo-fixed-block">Enable JavaScript</noscript>
+    <p id="title">Wolfoo and his friends are ruining the web!</p>
     <strong>Wolfoo characters taken from <a class="show-link" href="https://scratch.mit.edu/projects/563550882/"></a></strong>
     <h1>Characters modified</h1>
     <ul>
@@ -52,6 +21,10 @@
         <li>Bufo, Piggy: Added tail because were missing</li>
         <li>Jenny: Modified body size to look more real</li>
     </ul>
+    <h2>Changes</h2>
+    <ol>
+        <li>Improved performance</li>
+    </ol>
     <p>You can use this on another website with this script</p>
     <pre id="import" class="code">
 /* You can remove this if you won't change these values below, from here... */
@@ -76,15 +49,17 @@ fetch('https://rockingerser.github.io/wolfoo-crazy/index.js').then(t=>t.text()).
             <img src="characters/svg/Lucy0.svg" alt="Lucy">
         </div>
     </div>
-    <h2>How to do something?</h2>
+    <h3>How to do something?</h3>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea sequi dicta, nulla saepe veritatis velit maiores atque odio ex voluptatum nisi quae facilis fugiat facere quam accusantium. Nostrum, iste ad?</p>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A eaque adipisci officiis ducimus iusto, eveniet deserunt, voluptate magni error porro optio? Reprehenderit aspernatur velit nesciunt magnam aut possimus veritatis culpa.</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae dolorem nam fugit alias impedit, distinctio quod nihil quibusdam, laboriosam sunt, corporis amet repellat nisi maxime id explicabo reiciendis optio animi?</p>
-    <h3>How to walk?</h3>
+    <h4>How to walk?</h4>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi exercitationem necessitatibus ea repellat reiciendis placeat sint nemo id sit, eum harum voluptatibus veritatis aspernatur enim consequatur modi? Laborum, ipsum nulla.</p>
     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rerum amet sequi voluptatum doloribus nihil tempore maiores similique laboriosam perspiciatis iusto, asperiores ducimus aperiam, provident blanditiis iste eligendi pariatur omnis! Incidunt?</p>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit laboriosam ad possimus hic voluptas quam ratione! Est quisquam dignissimos labore provident autem, enim mollitia, esse nemo et aspernatur suscipit molestias.</p>
-    <script src='index.js'></script>
-    <script src='wolfoo.hue-rotate.js'></script>
+    <script src='js/index.js'></script>
+    <script src='js/wolfoo.hue-rotate.js'></script>
+    <script src="js/disable.agents.click.links.js"></script>
+    <script src="js/console.js"></script>
 </body>
 </html>

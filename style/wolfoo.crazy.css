@@ -1,0 +1,83 @@
+:root {
+    --glide-transition: 0s;
+    --matrix-transition: 0.1s;
+    --agent-drag-background-color: transparent;
+    --agent-drag-outline-color: transparent;
+    --agent-drag-outline-width: 0;
+    --agent-drag-outline-style: solid;
+}
+#credits {
+    top: 0;
+}
+#license {
+    bottom: 0;
+}
+#license img {
+    margin-top: 4px;
+    margin-right: 10px;
+}
+@media only screen and (max-width: 664px) {
+    #license {
+        display: block;
+        text-align: center;
+    }
+    #license img {
+        display: block;
+        margin: auto;
+    }
+}
+.wolfoo-fixed-block {
+    position: fixed;
+    box-sizing: border-box;
+    width: calc(100% - (6px + 8px));
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #fff;
+    padding: 0 6px;
+    margin: 8px;
+    border-radius: 10px;
+    background: #000000a0;
+    pointer-events: none;
+}
+.wolfoo-fixed-block {
+    z-index: 9998;
+}
+.wolfoo-fixed-block p {
+    margin: 0;
+}
+.wolfoo-fixed-block a {
+    color: rgb(3, 207, 3);
+    pointer-events: all;
+}
+.wolfoo-fixed-block a:visited {
+    color: rgb(147, 255, 147);
+}
+.wolfoo-character-container .wolfoo-character {
+    width: 70px;
+}
+.wolfoo-character-container {
+    position: absolute;
+    z-index: 9997;
+    display: -ms-grid;
+    display: grid;
+    font: 16px Arial, Helvetica, sans-serif;
+    text-align: center;
+    pointer-events: none;
+}
+.wolfoo-character-container, .grabbed {
+    -webkit-transition: left var(--glide-transition) linear, top var(--glide-transition) linear;
+    -moz-transition: left var(--glide-transition) linear, top var(--glide-transition) linear;
+    -o-transition: left var(--glide-transition) linear, top var(--glide-transition) linear;
+    transition: left var(--glide-transition) linear, top var(--glide-transition) linear;
+}
+.grabbed {
+    outline: var(--agent-drag-outline-width) var(--agent-drag-outline-style) var(--agent-drag-outline-color);
+    background-image: linear-gradient(var(--agent-drag-background-color), var(--agent-drag-background-color));
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+}
+.show-link::before {
+    content: attr(href);
+}
