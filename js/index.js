@@ -97,6 +97,11 @@ void function() {
 		return xInstersection && yInstersection;
 	}
 	// Add the license
+	if (!document.getElementById('info')) {
+		var info = document.createElement('div');
+		info.id = 'info';
+		document.body.appendChild(info);
+	}
 	var LICENSE = document.createElement('div');
 	LICENSE.id = 'license';
 	LICENSE.classList = 'box';
