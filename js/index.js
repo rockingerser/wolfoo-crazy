@@ -1,7 +1,10 @@
-import agentHTML from './modules/agents.js';
 void function() {
 	'use strict';
-	//document.getElementById('info').style.bottom = '25px';
+	var agentHTML = `
+    	<img class="wolfoo-character-avatar non-grabbable" draggable="false">
+    	<span class="wolfoo-character-name non-grabbable"></span>
+    	<progress class="wolfoo-character-health" value="1"></progress>
+	`;
 	function msg(data, type) {
 		for (var ln of data) {
 			var msg = document.createComment(ln);
